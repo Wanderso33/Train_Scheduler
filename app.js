@@ -10,12 +10,12 @@ var config = {
 
 firebase.initializeApp(config);
 
-var database = firebase.TrainScheduler();
+var database = firebase.database();
 // 2. Create button for adding new train - then update the html + update the database
 $("#add-new-train").on("click", function (event) {
     event.preventDefault();
 
-    // 3. Create a way to retrieve employees from the employee database.
+    // 3. Create a way to retrieve train information from firebase database.
     train_name = $("#train-name-input").val().trim();
     destination = $("#destination-input").val().trim();
     firstTrain = $("#first-train-input").val().trim();
@@ -36,6 +36,8 @@ $("#add-new-train").on("click", function (event) {
 
 
 });
+
+//Recall Push command and child added.
 
 database.ref().on("child_added", function (snapshot) {
 
