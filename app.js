@@ -21,6 +21,9 @@ $("#add-new-train").on("click", function (event) {
     firstTrain = $("#first-train-input").val().trim();
     frequency = $("#frequency-input").val().trim();
 
+    //4. Code for Push
+    
+
 
     console.log("train_name", train_name);
     console.log("destination", destination);
@@ -56,8 +59,10 @@ database.ref().on("child_added", function (snapshot) {
 
 
     $("#train-table > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" +
-    tFrequency + "</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></tr>");
+    tFrequency + "</td><td>" + tArrival + "</td><td>");
     // Handle the errors
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
+
+
